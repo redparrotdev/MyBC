@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBC.App", "MyBC.App\MyBC.App.csproj", "{3A3177E0-5063-43E5-9A77-C7C85E613B1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A3177E0-5063-43E5-9A77-C7C85E613B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3177E0-5063-43E5-9A77-C7C85E613B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3177E0-5063-43E5-9A77-C7C85E613B1F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3A3177E0-5063-43E5-9A77-C7C85E613B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3177E0-5063-43E5-9A77-C7C85E613B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3177E0-5063-43E5-9A77-C7C85E613B1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE682081-8DA7-451E-B96D-7661DCB94C18}
+	EndGlobalSection
+EndGlobal

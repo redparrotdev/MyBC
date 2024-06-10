@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MyBC.App.MVVM.ViewModels"
+             x:Class="MyBC.App.MVVM.Views.HomePage"
+             Title="HomePage">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" 
+             IconImageSource="{ FontImage Glyph='+', Size=20 }"
+             Command="{Binding AddNewCardCommand}"/>
+        <ToolbarItem Text="Sign Out" 
+             IconImageSource="{ FontImage Glyph='🔐', Size=20 }" Command="{Binding SignOutCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto, Auto, *">
+        <Frame Grid.Row="0"
+       VerticalOptions="Center" 
+       HorizontalOptions="Center"
+       HeightRequest="150"
+       WidthRequest="150"
+       IsClippedToBounds="True"
+       CornerRadius="75"
+           Background="Transparent">
+
+            <Image Source="dotnet_bot.png"/>
+
+        </Frame>
+
+        <Frame Grid.Row="1"
+       Margin="5" Background="Transparent">
+            <Label Text="{Binding UserName}"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"/>
+        </Frame>
+
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Items}"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Margin="10, 0, 10, 0"
+        VerticalScrollBarVisibility="Never">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="Transparent">
+                        <Grid ColumnDefinitions="1*, Auto" ColumnSpacing="10">
+
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="{Binding SocialName}" FontSize="22"/>
+                                <Label Text="{Binding SocialLink}"/>
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5" Grid.Column="1">
+                                <ImageButton Source="copy_icon.png" 
+                                     WidthRequest="32" 
+                                     HeightRequest="32"
+                                     Command="{Binding CopyToClipboardCommand}"
+                                     Aspect="AspectFit"
+                                     CornerRadius="4"/>
+                                <ImageButton Source="share_icon.png" 
+                                     WidthRequest="32" 
+                                     HeightRequest="32"
+                                     Command="{Binding ShareCommand}"
+                                     Aspect="AspectFit"
+                                     CornerRadius="4"/>
+                                <ImageButton Source="web_icon.png"  
+                                     WidthRequest="32" 
+                                     HeightRequest="32"
+                                     Command="{Binding OpenInBrowserCommand}"
+                                     Aspect="AspectFit"
+                                     CornerRadius="4"/>
+                                <ImageButton Source="qr_icon.png" 
+                                     WidthRequest="32"
+                                     HeightRequest="32"
+                                     Command="{Binding GetQRCodeCommand}"
+                                     Aspect="AspectFit"
+                                     CornerRadius="4"/>
+                            </HorizontalStackLayout>
+
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>
