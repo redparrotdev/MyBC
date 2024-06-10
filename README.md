@@ -3,6 +3,7 @@ Mobile devices (Androi/IOS) application that allows you to easy manage and share
 
 # Tech
 - C#
+- .NET MAUI
 - MVVM
 - Firebase.Authentication
 - Firebase.Database (Soon)
